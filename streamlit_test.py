@@ -63,6 +63,6 @@ prob1_class1 = prob1[0, 1]
 prediction_label = 'Yes' if y_pred[0] == 1 else 'No'
 
 # Display the results
-st.title(f'\nPredicted LinkedIn use: {prediction_label}')
+st.title(f'\nPredicted LinkedIn user: {prediction_label}')
 
-st.title(f'Probability of LinkedIn use: {prob1_class1:.4f}')
+st.title(f'Probability of LinkedIn user: {prob1_class1:.4f}')
