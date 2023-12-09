@@ -14,7 +14,7 @@ TestA = [Income, Education, Parent, Married, Female, Age]
 import pandas as pd
 import numpy as np
 
-s = pd.read_csv('social_media_usage.csv')
+s = pd.read_csv('https://github.com/stuckonland/my_ML_App/blob/a0ce38954ac9f52d848161e47825257b650fb662/social_media_usage.csv')
 def clean_sm(x): #function that returns a boolean for positive use
     return np.where(x == 1, 1, 0)
 data = {'col1': [0, 1, 0], 'col2': [1, 0, 1]} #New dataframe to test
