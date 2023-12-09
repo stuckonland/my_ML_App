@@ -1,6 +1,7 @@
 import streamlit as st 
 
-
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 
 with st.sidebar:
     Income = st.number_input("Income (1 = Less than 10,000, 2 = 10 to under 20,000, 3 = 20 to under 30,000, 4 = 30 to under 40,000, 5 = 40 to under 50,000, 6 = 50 to under 75,000, 7 = 75 to under 100,000, 8 = 100 to under 150,000, 9 = 150,000 or more)", 1, 9)
