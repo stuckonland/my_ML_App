@@ -58,6 +58,8 @@ prob1 = logreg_model.predict_proba(user_data)
 
 prob1_class1 = prob1[0, 1]
 
+prediction_label = 'Yes' if y_pred[0] == 1 else 'No'
+
 # Display the results
-st.write(f'\nPredicted LinkedIn use: {y_pred[0]}')
+st.write(f'\nPredicted LinkedIn use: {prediction_label}')
 st.write(f'Probability of LinkedIn use: {prob1_class1:.4f}')
