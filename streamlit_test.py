@@ -17,11 +17,10 @@ import numpy as np
 s = pd.read_csv('https://raw.githubusercontent.com/stuckonland/my_ML_App/main/social_media_usage.csv')
 def clean_sm(x): #function that returns a boolean for positive use
     return np.where(x == 1, 1, 0)
-data = {'col1': [0, 1, 0], 'col2': [1, 0, 1]} #New dataframe to test
-toy_df = pd.DataFrame(data)
-cleaned_df = toy_df.apply(clean_sm) #testing the new dataframe
-ss = s.assign(sm_li=lambda x: clean_sm(x['web1h'])) # creates a new column called 'sm_li' that tests whether the respondant is on linkedin
+
+ss = s.assign(sm_li=lambda x: clean_sm(x['web1h'])) # creates a new column called 'sm_li' that tests whether the respondent is on LinkedIn
 ss = ss.dropna() 
+
 ss['income'] = np.where((ss['income'] >= 1) & (ss['income'] <= 9), ss['income'], np.nan)
 ss['education'] = np.where((ss['educ2'] >= 1) & (ss['educ2'] <= 8), ss['educ2'], np.nan)
 ss['parent'] = np.where(ss['par'] == 1, 1, 0)
@@ -32,8 +31,6 @@ ss = ss.dropna() #drops NA
 ss = ss[['income', 'education', 'parent', 'married', 'female', 'age', 'sm_li']]
 correlation_matrix = ss.corr()
 
-
-from sklearn.model_selection import train_test_split
 ss.reset_index(drop=True, inplace=True)
 ss.dropna(inplace=True)
 
@@ -41,7 +38,6 @@ y = ss['sm_li'].reset_index(drop=True).dropna()
 x = ss.drop('sm_li',axis=1).reset_index(drop=True).dropna()
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123)
 
-from sklearn.linear_model import LogisticRegression
 
 logreg_model = LogisticRegression(class_weight='balanced', random_state=123)
 
