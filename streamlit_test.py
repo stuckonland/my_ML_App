@@ -1,5 +1,5 @@
 import streamlit as st 
-install -r packages.txt
+
 with st.sidebar:
     Income = st.number_input("Income (1 = Less than 10,000, 2 = 10 to under 20,000, 3 = 20 to under 30,000, 4 = 30 to under 40,000, 5 = 40 to under 50,000, 6 = 50 to under 75,000, 7 = 75 to under 100,000, 8 = 100 to under 150,000, 9 = 150,000 or more)", 1, 9)
     Education = st.number_input("Education (1 = Less than high school (Grades 1-8 or no formal schooling), 2 = High school incomplete (Grades 9-11 or Grade 12 with NO diploma), 3 = High school graduate (Grade 12 with diploma or GED certificate), 4 = Some college, no degree (includes some community college), 5 = Two-year associate degree from a college or university, 6 = Four-year college or university degree/Bachelor's degree (e.g., BS, BA, AB), 7 =  Some postgraduate or professional schooling, no postgraduate degree (e.g. some graduate school) 8 = Postgraduate or professional degree, including master's, doctorate, medical or law degree (e.g., MA, MS, PhD, MD, JD))", 1, 8)
