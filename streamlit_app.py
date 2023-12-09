@@ -1,3 +1,12 @@
+[theme]
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
+
+
+
 import streamlit as st 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
